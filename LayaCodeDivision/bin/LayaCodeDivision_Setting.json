@@ -1,0 +1,7 @@
+{
+  "autoEnd": true,
+  "cmd": "mergejs",
+  "optionSetting": "./LayaCodeDivision_Setting.json",
+  "outDir": "./laya_bin_out",
+  "inDir": "./laya_libs"
+}
