@@ -278,3 +278,5 @@ var TextureGenerator=(function(){
 
 /**
 *@private
+
+*/

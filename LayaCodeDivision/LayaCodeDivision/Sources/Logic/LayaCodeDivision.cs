@@ -17,15 +17,15 @@ class LayaCodeDivision
 
         //ReadFile(inDir + "/laya.d3.js");
         //ReadFile(inDir + "/laya.d3Plugin.js");
-        //ReadFile(inDir + "/laya.core.js");
-        //ReadFile(inDir + "/laya.ui.js");
+        ReadFile(inDir + "/laya.core.js");
+        ReadFile(inDir + "/laya.ui.js");
         //ReadFile2(inDir + "/laya.device.js");
         //ReadFile2(inDir + "/laya.webgl.js");
-        ReadFile2(inDir + "/laya.filter.js");
-        ReadFile2(inDir + "/laya.effect.js");
-        ReadFile2(inDir + "/laya.pathfinding.js");
-        ReadFile2(inDir + "/laya.tiledmap.js");
-        ReadFile2(inDir + "/laya.wxmini.js");
+        //ReadFile2(inDir + "/laya.filter.js");
+        //ReadFile2(inDir + "/laya.effect.js");
+        //ReadFile2(inDir + "/laya.pathfinding.js");
+        //ReadFile2(inDir + "/laya.tiledmap.js");
+        //ReadFile2(inDir + "/laya.wxmini.js");
 
         //string[] files = Directory.GetFiles(intDir, "*.js");
 
@@ -63,10 +63,28 @@ class LayaCodeDivision
             MatchCollection matchCollection = Regex.Matches(code, pattern, RegexOptions.IgnoreCase);
             foreach (Match match in matchCollection)
             {
+                string[] lines = code.Split('\n');
+                bool hasEnd = false;
+                string v = "/**\r";
+                if (lines[lines.Length - 1] == v 
+                    || lines[lines.Length - 2] == v
+                    || lines[lines.Length - 3] == v
+                    || lines[lines.Length - 4] == v
+                    )
+                {
+                    hasEnd = true;
+                }
+
                 string clsName = (string)match.Groups[1].Value;
                 code = @"/**
 *<code>"
     + code;
+
+                if(hasEnd)
+                {
+                    code = code + @"
+*/";
+                }
 
                 string outPath = dir + "/" + clsName + ".js";
                 PathHelper.CheckPath(outPath);

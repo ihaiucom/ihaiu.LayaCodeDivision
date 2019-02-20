@@ -4852,3 +4852,5 @@ var FadeOut=(function(_super){
 
 	/**LayaGameStart**/
 	new LayaMain();
+
+})(window,document,Laya);

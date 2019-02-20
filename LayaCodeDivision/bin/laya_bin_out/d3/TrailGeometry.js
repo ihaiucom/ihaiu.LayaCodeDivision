@@ -312,3 +312,5 @@ var TrailGeometry=(function(_super){
 
 
 /**
+
+*/
