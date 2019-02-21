@@ -17,8 +17,8 @@ class LayaCodeDivision
 
         //ReadFile(inDir + "/laya.d3.js");
         //ReadFile(inDir + "/laya.d3Plugin.js");
-        ReadFile(inDir + "/laya.core.js");
-        ReadFile(inDir + "/laya.ui.js");
+        //ReadFile(inDir + "/laya.core.js");
+        //ReadFile(inDir + "/laya.ui.js");
         //ReadFile2(inDir + "/laya.device.js");
         //ReadFile2(inDir + "/laya.webgl.js");
         //ReadFile2(inDir + "/laya.filter.js");
