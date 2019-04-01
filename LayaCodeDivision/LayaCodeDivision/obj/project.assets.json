@@ -691,6 +691,9 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
       "projectUniqueName": "E:\\zengfeng\\githubs\\ihaiu.LayaCodeDivision\\LayaCodeDivision\\LayaCodeDivision\\LayaCodeDivision.csproj",
       "projectName": "LayaCodeDivision",
@@ -709,7 +712,7 @@
         "netcoreapp2.2"
       ],
       "sources": {
-        "c:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -729,7 +732,7 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.2.0, )",
+            "version": "2.2.0",
             "autoReferenced": true
           }
         },

@@ -26,6 +26,7 @@ class LayaCodeDivision
         //ReadFile2(inDir + "/laya.pathfinding.js");
         //ReadFile2(inDir + "/laya.tiledmap.js");
         //ReadFile2(inDir + "/laya.wxmini.js");
+        ReadFile3(inDir + "/fairygui.js");
 
         //string[] files = Directory.GetFiles(intDir, "*.js");
 
@@ -99,6 +100,40 @@ class LayaCodeDivision
 
 
     public void ReadFile2(string path)
+    {
+        string content = File.ReadAllText(path);
+
+        string[] array = content.Split("//class");
+
+
+        string dir = outDir + "/" + Path.GetFileName(path).Replace(".js", "").Replace("laya.", "");
+
+        string pattern = @"var (.*)\s*=\(function";
+
+        for (int i = 0; i < array.Length; i++)
+        {
+
+            string code = array[i];
+            MatchCollection matchCollection = Regex.Matches(code, pattern, RegexOptions.IgnoreCase);
+            foreach (Match match in matchCollection)
+            {
+                string clsName = (string)match.Groups[1].Value;
+                code = @"//class"
+    + code;
+
+                string outPath = dir + "/" + clsName + ".js";
+                PathHelper.CheckPath(outPath);
+                File.WriteAllText(outPath, code);
+
+
+                Console.WriteLine(clsName);
+
+            }
+        }
+    }
+
+
+    public void ReadFile3(string path)
     {
         string content = File.ReadAllText(path);
 
