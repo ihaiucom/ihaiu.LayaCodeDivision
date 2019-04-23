@@ -26,7 +26,9 @@ class LayaCodeDivision
         //ReadFile2(inDir + "/laya.pathfinding.js");
         //ReadFile2(inDir + "/laya.tiledmap.js");
         //ReadFile2(inDir + "/laya.wxmini.js");
-        ReadFile2(inDir + "/laya.ani.js");
+        //ReadFile2(inDir + "/laya.ani.js");
+        ReadFile(inDir + "/laya.particle.js");
+        
         //ReadFile3(inDir + "/fairygui.js");
 
         //string[] files = Directory.GetFiles(intDir, "*.js");
